@@ -1,0 +1,9 @@
+{
+  "dataset": "ml/datasets/summary_references.csv",
+  "lead_baseline": {
+    "rouge1": 0.5178,
+    "rouge2": 0.4091,
+    "rougeL": 0.5178
+  },
+  "note": "lead_baseline is the first two sentences. BART and T5 run only with --use-hf."
+}

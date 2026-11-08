@@ -1,0 +1,137 @@
+{
+  "apnews.com": {
+    "tier": "high",
+    "score": 94,
+    "notes": "Cooperative newswire with a public corrections policy and named sourcing standards."
+  },
+  "reuters.com": {
+    "tier": "high",
+    "score": 93,
+    "notes": "International wire with a published Trust Principles document and a corrections process."
+  },
+  "bbc.co.uk": {
+    "tier": "high",
+    "score": 92,
+    "notes": "Public broadcaster with written editorial guidelines and an independent complaints process."
+  },
+  "bbc.com": {
+    "tier": "high",
+    "score": 92,
+    "notes": "Same newsroom as BBC News."
+  },
+  "npr.org": {
+    "tier": "high",
+    "score": 88,
+    "notes": "US public radio with editorial guidelines and corrections."
+  },
+  "ft.com": {
+    "tier": "high",
+    "score": 88,
+    "notes": "Specialist financial paper with a corrections column and named bylines."
+  },
+  "cbc.ca": {
+    "tier": "high",
+    "score": 86,
+    "notes": "Canadian public broadcaster with a journalistic standards guide."
+  },
+  "dw.com": {
+    "tier": "high",
+    "score": 86,
+    "notes": "German public international broadcaster with statutory editorial independence."
+  },
+  "nytimes.com": {
+    "tier": "high",
+    "score": 86,
+    "notes": "National paper with a public corrections page and standards editor."
+  },
+  "theguardian.com": {
+    "tier": "high",
+    "score": 84,
+    "notes": "Owned by the Scott Trust, with a readers' editor and open corrections."
+  },
+  "washingtonpost.com": {
+    "tier": "high",
+    "score": 84,
+    "notes": "National paper with published standards and a corrections process."
+  },
+  "bloomberg.com": {
+    "tier": "high",
+    "score": 84,
+    "notes": "Financial newswire with a public code of ethics."
+  },
+  "france24.com": {
+    "tier": "high",
+    "score": 82,
+    "notes": "France Médias Monde international broadcaster with a published charter."
+  },
+  "dawn.com": {
+    "tier": "high",
+    "score": 82,
+    "notes": "Pakistan's longest-running English paper, with named bylines and a corrections practice."
+  },
+  "thehindu.com": {
+    "tier": "high",
+    "score": 82,
+    "notes": "Indian national paper with a readers' editor."
+  },
+  "thediplomat.com": {
+    "tier": "high",
+    "score": 80,
+    "notes": "Specialist outlet focused on Asia-Pacific security and diplomacy."
+  },
+  "politico.com": {
+    "tier": "high",
+    "score": 80,
+    "notes": "Politics desk with named reporters and a corrections policy."
+  },
+  "politico.eu": {
+    "tier": "high",
+    "score": 80,
+    "notes": "European edition of Politico."
+  },
+  "aljazeera.com": {
+    "tier": "high",
+    "score": 78,
+    "notes": "International newsroom funded by Qatar. Ownership is public; treat state-aligned framing as a factor, not a reason to drop the source."
+  },
+  "news.un.org": {
+    "tier": "high",
+    "score": 78,
+    "notes": "Official United Nations outlet. Transparent about its institutional role; not an independent newsroom."
+  },
+  "sky.com": {
+    "tier": "medium",
+    "score": 76,
+    "notes": "UK commercial broadcaster regulated by Ofcom. Faster headlines, more live-TV tone."
+  },
+  "euronews.com": {
+    "tier": "medium",
+    "score": 76,
+    "notes": "Pan-European broadcaster with several shareholders and a shorter corrections trail than a newspaper."
+  },
+  "africanews.com": {
+    "tier": "medium",
+    "score": 74,
+    "notes": "Pan-African broadcaster linked to Euronews. Useful regional coverage; thinner public standards page."
+  },
+  "al-monitor.com": {
+    "tier": "medium",
+    "score": 74,
+    "notes": "Regional specialist. Useful on Middle East diplomacy; smaller corrections apparatus."
+  },
+  "cnn.com": {
+    "tier": "medium",
+    "score": 70,
+    "notes": "Large international desk and a corrections page, with a history of sensational headlines."
+  },
+  "newsapi.org": {
+    "tier": "unknown",
+    "score": 50,
+    "notes": "Aggregator. Articles are scored against the outlet that published them, not against NewsAPI."
+  },
+  "gnews.io": {
+    "tier": "unknown",
+    "score": 50,
+    "notes": "Aggregator. Articles are scored against the outlet that published them."
+  }
+}

@@ -1,0 +1,49 @@
+services:
+  # Optional local Postgres. The running API uses Neon via .env.
+  db:
+    image: postgres:15
+    profiles: ["local-db"]
+    environment:
+      POSTGRES_USER: geopolitics
+      POSTGRES_PASSWORD: geopolitics
+      POSTGRES_DB: geopolitics
+    ports:
+      - "5432:5432"
+    volumes:
+      - geopolitics_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U geopolitics -d geopolitics"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      ENABLE_SCHEDULER: "false"
+      CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+
+  # Downloads DistilBART + T5 / RoBERTa / NER and runs ingest + NLP on a schedule.
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    env_file:
+      - .env
+    environment:
+      ENABLE_SCHEDULER: "true"
+      HF_HOME: /app/.hf_cache
+      PROCESS_BATCH_SIZE: "20"
+    volumes:
+      - hf_cache:/app/.hf_cache
+    restart: unless-stopped
+
+volumes:
+  geopolitics_pg:
+  hf_cache:

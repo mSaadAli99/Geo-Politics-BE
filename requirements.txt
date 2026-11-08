@@ -1,0 +1,27 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+pydantic>=2.9.0
+pydantic-settings>=2.6.0
+sqlalchemy>=2.0.36
+alembic>=1.14.0
+psycopg[binary]>=3.2.0
+apscheduler>=3.10.4
+requests>=2.32.0
+feedparser>=6.0.11
+pandas>=2.2.0
+numpy>=2.0.0
+scikit-learn>=1.5.0
+pycountry>=24.6.1
+joblib>=1.4.0
+httpx>=0.27.0
+pytest>=8.3.0
+pytest-cov>=6.0.0
+rouge-score>=0.1.2
+matplotlib>=3.9.0
+ruff>=0.7.0
+black>=24.10.0
+# Worker only. The API process never imports these.
+# If the default wheel is large, install the CPU build:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch>=2.5.0
+transformers>=4.46.0

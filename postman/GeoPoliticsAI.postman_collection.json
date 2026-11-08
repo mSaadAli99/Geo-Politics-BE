@@ -1,0 +1,115 @@
+{
+  "info": {
+    "name": "GeoPolitics AI",
+    "description": "Every /api/v1 endpoint. Set base_url and admin_key in the collection variables.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:8000/api/v1" },
+    { "key": "admin_key", "value": "change-me" },
+    { "key": "article_id", "value": "1" },
+    { "key": "event_id", "value": "1" },
+    { "key": "iso2", "value": "PK" }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": { "method": "GET", "url": "{{base_url}}/health" }
+    },
+    {
+      "name": "Articles",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/articles?q=border&category=international_relations&country=PK&sentiment=neutral&sort=latest&page=1&page_size=20",
+          "host": ["{{base_url}}"],
+          "path": ["articles"],
+          "query": [
+            { "key": "q", "value": "border" },
+            { "key": "category", "value": "international_relations" },
+            { "key": "country", "value": "PK" },
+            { "key": "sentiment", "value": "neutral" },
+            { "key": "sort", "value": "latest" },
+            { "key": "page", "value": "1" },
+            { "key": "page_size", "value": "20" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Article detail",
+      "request": { "method": "GET", "url": "{{base_url}}/articles/{{article_id}}" }
+    },
+    {
+      "name": "Categories",
+      "request": { "method": "GET", "url": "{{base_url}}/categories" }
+    },
+    {
+      "name": "Sources",
+      "request": { "method": "GET", "url": "{{base_url}}/sources" }
+    },
+    {
+      "name": "Countries",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/countries?category=politics"
+      }
+    },
+    {
+      "name": "Country detail",
+      "request": { "method": "GET", "url": "{{base_url}}/countries/{{iso2}}" }
+    },
+    {
+      "name": "Trending",
+      "request": { "method": "GET", "url": "{{base_url}}/trending?window=24h&limit=10" }
+    },
+    {
+      "name": "Stats overview",
+      "request": { "method": "GET", "url": "{{base_url}}/stats/overview" }
+    },
+    {
+      "name": "Stats sentiment",
+      "request": { "method": "GET", "url": "{{base_url}}/stats/sentiment?group_by=day" }
+    },
+    {
+      "name": "Stats categories",
+      "request": { "method": "GET", "url": "{{base_url}}/stats/categories?country=PK" }
+    },
+    {
+      "name": "Events",
+      "request": { "method": "GET", "url": "{{base_url}}/events?min_sources=2&page=1&page_size=20" }
+    },
+    {
+      "name": "Event detail",
+      "request": { "method": "GET", "url": "{{base_url}}/events/{{event_id}}" }
+    },
+    {
+      "name": "Timeline",
+      "request": { "method": "GET", "url": "{{base_url}}/timeline?country=PK&granularity=day" }
+    },
+    {
+      "name": "Admin ingest",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "X-Admin-Key", "value": "{{admin_key}}" }],
+        "url": "{{base_url}}/admin/ingest"
+      }
+    },
+    {
+      "name": "Admin reprocess",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "X-Admin-Key", "value": "{{admin_key}}" }],
+        "url": "{{base_url}}/admin/reprocess/{{article_id}}"
+      }
+    },
+    {
+      "name": "Admin runs",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "X-Admin-Key", "value": "{{admin_key}}" }],
+        "url": "{{base_url}}/admin/runs"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = ["integration: tests that need a PostgreSQL database"]
+
+[tool.coverage.run]
+source = ["app"]
+omit = ["app/nlp/models.py"]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true

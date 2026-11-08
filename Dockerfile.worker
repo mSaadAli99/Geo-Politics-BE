@@ -1,0 +1,20 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements-api.txt requirements-worker.txt ./
+RUN pip install --no-cache-dir -r requirements-api.txt \
+    && pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu \
+    && pip install --no-cache-dir "transformers>=4.46.0,<5.0.0"
+
+COPY . .
+
+ENV ENABLE_SCHEDULER=true
+ENV HF_HOME=/app/.hf_cache
+ENV PROCESS_BATCH_SIZE=10
+
+CMD ["python", "-m", "app.scheduler.run_scheduler"]

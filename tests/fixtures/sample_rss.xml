@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>Sample</title>
+    <item>
+      <title>UN diplomats discuss sanctions</title>
+      <link>https://example.com/un</link>
+      <description>Diplomats at the United Nations discussed sanctions.</description>
+    </item>
+  </channel>
+</rss>
